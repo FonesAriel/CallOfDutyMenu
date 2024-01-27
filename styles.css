@@ -1,0 +1,204 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    /* Añadido para quitar el margen predeterminado del body */
+    overflow: hidden;
+    /* Añadido para evitar barras de desplazamiento */
+    background-color: rgb(12, 12, 12);
+    color: aliceblue;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.frame {
+    width: 100vw;
+    /* Cambiado a 100vw para ocupar el ancho total de la ventana */
+    height: 100vh;
+    /* Mantenido para ocupar el alto total de la ventana */
+    position: absolute;
+    top: 0;
+    /* Cambiado a 0 para ajustar al borde superior */
+    left: 0;
+    /* Cambiado a 0 para ajustar al borde izquierdo */
+    transform: translate(0, 0);
+    /* Ajustado para ocupar la posición inicial */
+    overflow: hidden;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.boxes::before,
+.boxes::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.boxes::before {
+    background-image: var(--bgFrame,
+            url("https://cdn.realsport101.com/images/ncavvykf/gfinityesports/ffb41d4dd3cbbc5611c5adb14b415aedeaed10ca-1920x1099.jpg?rect=0,9,1920,1081&w=700&h=394&dpr=2"));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right 0%;
+    z-index: 2;
+}
+
+.boxes::after {
+    background-color: rgba(22, 22, 22, 0.788);
+    z-index: 4;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0px 0px 10px 5px inset #000;
+}
+
+.box {
+    width: 26%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8.5rem;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 8;
+    text-transform: uppercase;
+}
+
+.box img,
+.box .text {
+    opacity: 0.4;
+    z-index: 3;
+}
+
+.box img {
+    width: 85px;
+}
+
+.box .text,
+.box .menu {
+    color: black;
+    min-width: 150px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+    opacity: 0;
+}
+
+.box span {
+    cursor: pointer;
+    padding: 0.15rem;
+}
+
+.box span.perOrder {
+    background-color: rgb(194, 177, 24);
+    text-transform: capitalize;
+}
+
+.box span.play {
+    background-color: aliceblue;
+}
+
+.box .menu {
+    list-style: none;
+    color: #fff;
+}
+
+.box .menu li {
+    color: aliceblue;
+    padding-block: 0.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+    cursor: pointer;
+}
+
+.box .menu li:nth-child(1) {
+    margin-top: 0 !important;
+}
+
+.box .menu li:nth-child(3n + 1),
+.box .menu li:nth-child(3n + 2),
+.box .menu li:nth-child(3n + 3) {
+    margin-top: 0.5rem;
+}
+
+.box .menu li.active {
+    color: #000;
+}
+
+.box .menu li.active::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
+    animation: line 0.2s ease forwards;
+    z-index: -1;
+}
+
+@keyframes line {
+    to {
+        width: 100%;
+    }
+}
+
+.box.active {
+    opacity: 1;
+    width: 50%;
+    z-index: 6;
+    box-shadow: 0px 0px 25px 10px #000;
+}
+
+.box.active img {
+    opacity: 1;
+    width: 160px;
+}
+
+.box.active .text {
+    opacity: 1;
+}
+
+.box.active.vanguard,
+.box.active.warzone,
+.box.active.cold,
+.box.active.modern {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box.active.vanguard {
+    background-image: url("https://image.api.playstation.com/vulcan/ap/rnd/202108/1103/S5ZoZsSNk0j1XpzwN01sk1HL.png");
+    background-position: right 44% bottom 45%;
+}
+
+.box.active.warzone {
+    background-image: url("https://assets2.rockpapershotgun.com/call-of-duty-warzone-rebirth-island.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/call-of-duty-warzone-rebirth-island.jpg");
+    background-position: center;
+}
+
+.box.active.cold {
+    background-image: var(--cold,
+            url("https://blog.activision.com/content/dam/atvi/activision/atvi-touchui/blog/callofduty/feature/BOCW-ALPHA-TOUT.jpg"));
+    background-position: center;
+}
+
+.box.active.modern {
+    background-image: var(--modern,
+            url("https://arabhardware.net/storage/uploads/2022-01/thumb-1920-1050665main61eaed9b30b82.jpg"));
+    background-position: right 45% bottom 45%;
+}
