@@ -1,3 +1,4 @@
+/* Reiniciando el relleno, margen y modelo de caja para todos los elementos */
 *,
 *::before,
 *::after {
@@ -6,33 +7,36 @@
     box-sizing: border-box;
 }
 
+/* Estilos para el elemento body */
 body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    /* Añadido para quitar el margen predeterminado del body */
+    /* Eliminando el margen predeterminado del body */
     overflow: hidden;
-    /* Añadido para evitar barras de desplazamiento */
+    /* Evitando las barras de desplazamiento */
     background-color: rgb(12, 12, 12);
     color: aliceblue;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Estilos para el contenedor frame */
 .frame {
     width: 100vw;
-    /* Cambiado a 100vw para ocupar el ancho total de la ventana */
+    /* Ancho total del viewport */
     height: 100vh;
-    /* Mantenido para ocupar el alto total de la ventana */
+    /* Alto total del viewport */
     position: absolute;
     top: 0;
-    /* Cambiado a 0 para ajustar al borde superior */
+    /* Ajustado al borde superior */
     left: 0;
-    /* Cambiado a 0 para ajustar al borde izquierdo */
+    /* Ajustado al borde izquierdo */
     transform: translate(0, 0);
-    /* Ajustado para ocupar la posición inicial */
+    /* Ajustado a la posición inicial */
     overflow: hidden;
 }
 
+/* Estilos para el contenedor boxes */
 .boxes {
     display: flex;
     justify-content: space-between;
@@ -47,6 +51,7 @@ body {
     height: 100%;
 }
 
+/* Estilos para la imagen de fondo antes de los boxes */
 .boxes::before {
     background-image: var(--bgFrame,
             url("https://cdn.realsport101.com/images/ncavvykf/gfinityesports/ffb41d4dd3cbbc5611c5adb14b415aedeaed10ca-1920x1099.jpg?rect=0,9,1920,1081&w=700&h=394&dpr=2"));
@@ -56,6 +61,7 @@ body {
     z-index: 2;
 }
 
+/* Estilos para la superposición después de los boxes */
 .boxes::after {
     background-color: rgba(22, 22, 22, 0.788);
     z-index: 4;
@@ -64,6 +70,7 @@ body {
     box-shadow: 0px 0px 10px 5px inset #000;
 }
 
+/* Estilos para los boxes individuales */
 .box {
     width: 26%;
     text-align: center;
@@ -77,6 +84,7 @@ body {
     text-transform: uppercase;
 }
 
+/* Estilos para imágenes y texto dentro de los boxes */
 .box img,
 .box .text {
     opacity: 0.4;
@@ -97,6 +105,7 @@ body {
     opacity: 0;
 }
 
+/* Estilos para los spans clicables */
 .box span {
     cursor: pointer;
     padding: 0.15rem;
@@ -111,6 +120,7 @@ body {
     background-color: aliceblue;
 }
 
+/* Estilos para la lista de menú dentro del box */
 .box .menu {
     list-style: none;
     color: #fff;
@@ -139,6 +149,7 @@ body {
     color: #000;
 }
 
+/* Estilos para la línea debajo del ítem de menú activo */
 .box .menu li.active::before {
     content: "";
     position: absolute;
@@ -151,12 +162,14 @@ body {
     z-index: -1;
 }
 
+/* Animación keyframes para la línea */
 @keyframes line {
     to {
         width: 100%;
     }
 }
 
+/* Estilos para el box activo */
 .box.active {
     opacity: 1;
     width: 50%;
@@ -164,6 +177,7 @@ body {
     box-shadow: 0px 0px 25px 10px #000;
 }
 
+/* Estilos para elementos del box activo */
 .box.active img {
     opacity: 1;
     width: 160px;
@@ -173,6 +187,7 @@ body {
     opacity: 1;
 }
 
+/* Estilos para diferentes fondos de box activo */
 .box.active.vanguard,
 .box.active.warzone,
 .box.active.cold,

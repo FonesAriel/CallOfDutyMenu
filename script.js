@@ -1,21 +1,31 @@
+// Seleccionar el contenedor de boxes y su pseudo-elemento :before
 const boxes = document.querySelector(".boxes");
 const boxes_pseudo = window.getComputedStyle(boxes, ":before");
+
+// Seleccionar todos los elementos con la clase "box"
 const box = document.querySelectorAll(".box");
 
+// Seleccionar elementos del menú de Cold War
 const coldMeun = document.querySelectorAll("#cold li");
 const coldWar_meun_bg = document.querySelector(".cold");
 
+// Seleccionar elementos del menú de Modern Warfare
 const modernMeun = document.querySelectorAll("#modern li");
 const modern_meun_bg = document.querySelector(".modern");
 
+// Evento de mouseenter para cada elemento con clase "box"
 box.forEach((ele, index) => {
     ele.addEventListener("mouseenter", (e) => {
+        // Remover la clase "active" de todos los elementos "box"
         box.forEach((rest) => rest.classList.remove("active"));
+        // Agregar la clase "active" al elemento actual
         ele.classList.add("active");
 
+        // Verificar si el elemento actual es "active"
         if (ele.classList[2] == "active") {
+            // Cambiar la imagen de fondo de boxes según el índice
             if (index === 0) {
-                // call of duty vanguard 🦇
+                // Call of Duty Vanguard 🦇
                 boxes.style.setProperty(
                     "--bgFrame",
                     "url('https://cdn.realsport101.com/images/ncavvykf/gfinityesports/ffb41d4dd3cbbc5611c5adb14b415aedeaed10ca-1920x1099.jpg?rect=0,9,1920,1081&w=700&h=394&dpr=2')"
@@ -23,7 +33,7 @@ box.forEach((ele, index) => {
             }
 
             if (index === 1) {
-                // call of duty warzone 🪖
+                // Call of Duty Warzone 🪖
                 boxes.style.setProperty(
                     "--bgFrame",
                     "url('https://assets2.rockpapershotgun.com/call-of-duty-warzone-rebirth-island.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/call-of-duty-warzone-rebirth-island.jpg')"
@@ -31,12 +41,12 @@ box.forEach((ele, index) => {
             }
 
             if (index === 2) {
-                // call of duty cold war 🧊
+                // Call of Duty Cold War 🧊
                 boxes.style.setProperty(
                     "--bgFrame",
                     "url('https://blog.activision.com/content/dam/atvi/activision/atvi-touchui/blog/callofduty/feature/BOCW-ALPHA-TOUT.jpg')"
                 );
-                // rest to original bg and remove active class ❌
+                // Restablecer el fondo original y quitar la clase "active" ❌
                 coldMeun.forEach((rest) => rest.classList.remove("active"));
                 coldWar_meun_bg.style.setProperty(
                     "--cold",
@@ -45,12 +55,12 @@ box.forEach((ele, index) => {
             }
 
             if (index === 3) {
-                // call of duty modern 💀
+                // Call of Duty Modern 💀
                 boxes.style.setProperty(
                     "--bgFrame",
                     "url('https://arabhardware.net/storage/uploads/2022-01/thumb-1920-1050665main61eaed9b30b82.jpg')"
                 );
-                // rest to original bg and remove active class ❌
+                // Restablecer el fondo original y quitar la clase "active" ❌
                 modernMeun.forEach((rest) => rest.classList.remove("active"));
                 modern_meun_bg.style.setProperty(
                     "--modern",
@@ -61,11 +71,15 @@ box.forEach((ele, index) => {
     });
 });
 
+// Evento de mouseover para cada elemento del menú de Cold War
 coldMeun.forEach((ele) => {
     ele.addEventListener("mouseover", () => {
+        // Remover la clase "active" de todos los elementos del menú de Cold War
         coldMeun.forEach((rest) => rest.classList.remove("active"));
+        // Agregar la clase "active" al elemento actual
         ele.classList.add("active");
 
+        // Cambiar el fondo según el texto del elemento actual
         if (ele.innerText === "CAMPAÑA") {
             coldWar_meun_bg.style.setProperty(
                 "--cold",
@@ -112,11 +126,15 @@ coldMeun.forEach((ele) => {
     });
 });
 
+// Evento de mouseover para cada elemento del menú de Modern Warfare
 modernMeun.forEach((ele) => {
     ele.addEventListener("mouseover", () => {
+        // Remover la clase "active" de todos los elementos del menú de Modern Warfare
         modernMeun.forEach((rest) => rest.classList.remove("active"));
+        // Agregar la clase "active" al elemento actual
         ele.classList.add("active");
 
+        // Cambiar el fondo según el texto del elemento actual
         if (ele.innerText === "CAMPAÑA") {
             modern_meun_bg.style.setProperty(
                 "--modern",

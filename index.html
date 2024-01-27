@@ -2,45 +2,61 @@
 <html lang="en">
 
 <head>
+    <!-- Establecer el conjunto de caracteres en UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Configurar el viewport para diseño responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlazar la hoja de estilo externa -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon"
-        href="Call_of_Duty_logo_2023_2.svg"
-        type="image/png">
-    <link rel="shortcut icon"
-        href="Call_of_Duty_logo_2023_2.svg"
-        type="image/png">
+    <!-- Establecer el favicon para el sitio web -->
+    <link rel="icon" href="Call_of_Duty_logo_2023_2.svg" type="image/png">
+    <link rel="shortcut icon" href="Call_of_Duty_logo_2023_2.svg" type="image/png">
+    <!-- Establecer el título de la página web -->
     <title>Call Of Duty</title>
 </head>
 
-
 <body>
+    <!-- Contenedor principal con clase "frame" -->
     <div class="frame">
+        <!-- Contenedor para cajas con clase "boxes" -->
         <div class="boxes">
+            <!-- Caja para Vanguard con clase "box vanguard active" -->
             <div class="box vanguard active">
+                <!-- Imagen para Vanguard -->
                 <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/hub/logos/vg-logo-white-color.png"
                     alt="" />
-                <span class="text perOrder">PRE-ORDENAR</span>
+                <!-- Texto para pre-ordenar con clase "text preOrder" -->
+                <span class="text preOrder">PRE-ORDENAR</span>
             </div>
+            <!-- Caja para Warzone con clase "box warzone" -->
             <div class="box warzone">
+                <!-- Imagen para Warzone -->
                 <img src="https://hypex.to/wp-content/uploads/2020/04/warzone-logo-white-shadow.png" alt="" />
+                <!-- Texto para jugar con clase "text play" -->
                 <span class="text play">JUGAR</span>
             </div>
+            <!-- Caja para Cold War con clase "box cold" -->
             <div class="box cold">
+                <!-- Imagen para Cold War -->
                 <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/zeus/common/logos/zeus-logo-light.png"
                     alt="" />
+                <!-- Lista no ordenada para el menú de Cold War con clase "text menu" e id "cold" -->
                 <ul class="text menu" id="cold">
+                    <!-- Elementos de la lista para el menú de Cold War -->
                     <li>CAMPAÑA</li>
                     <li>MULTIJUGADOR</li>
                     <li>COMPETITIVO</li>
                     <li>ZOMBIES</li>
                 </ul>
             </div>
+            <!-- Caja para Modern Warfare con clase "box modern" -->
             <div class="box modern">
+                <!-- Imagen para Modern Warfare -->
                 <img src="https://www.callofduty.com/content/dam/atvi/activision/atvi-touchui/activision/home/assets/COD-MW-LOGO-PLAIN.png"
                     alt="" />
+                <!-- Lista no ordenada para el menú de Modern Warfare con clase "text menu" e id "modern" -->
                 <ul class="text menu" id="modern">
+                    <!-- Elementos de la lista para el menú de Modern Warfare -->
                     <li>CAMPAÑA</li>
                     <li>MULTIJUGADOR</li>
                     <li>COOPERATIVO</li>
@@ -48,6 +64,7 @@
             </div>
         </div>
     </div>
+    <!-- Incluir archivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 
