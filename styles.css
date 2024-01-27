@@ -111,7 +111,7 @@ body {
     padding: 0.15rem;
 }
 
-.box span.perOrder {
+.box span.preOrder {
     background-color: rgb(194, 177, 24);
     text-transform: capitalize;
 }
